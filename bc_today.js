@@ -1,3 +1,4 @@
+"use strict";
 /*
    New Perspectives on HTML5 and CSS3, 7th Edition
    Tutorial 9
@@ -13,7 +14,20 @@
 
 */
 
+var thisDate = new Date("October 12, 2018");
+var dateString = thisDate.toLocaleString();
 
+var dateHTML = "<h2>" + thisDate + "</h2>";
+
+var thisDay = thisDate.getDay();
+
+function getEvent(thisDay) {
+    return thisDay;
+}
+
+var eventHTML = getEvent(thisDay);
+
+document.getElementById("unionToday").insertAdjacentHTML('beforeend', dateHTML + eventHTML);
 
 function getEvent(day) {
     var eventHTML;
