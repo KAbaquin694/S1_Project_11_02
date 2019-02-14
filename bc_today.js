@@ -14,20 +14,19 @@
 
 */
 
-var thisDate = new Date("October 12, 2018");
+// This section of code sets the current time to the local timezone.
+var thisDate = new Date();
 var dateString = thisDate.toLocaleString();
 
-var dateHTML = "<h2>" + thisDate + "</h2>";
+// This line of code abbreviates the current date & sets its as a second header.
+var dateHTML = "<h2>" + dateString + "</h2>";
 
+// This block of code grabs the current day of the week (0-6; 0 being Sunday, 1 being monday, so on & so forth) so that it could determine which info to show on the webpage & changes the info accordingly to the day that it is assigned to.
 var thisDay = thisDate.getDay();
-
-function getEvent(thisDay) {
-    return thisDay;
-}
-
 var eventHTML = getEvent(thisDay);
 
-document.getElementById("unionToday").insertAdjacentHTML('beforeend', dateHTML + eventHTML);
+// This line of code grabs the element with the id of 'unionToday' & inserts the values of the variables 'dateHTML' & 'eventHTML' after said element.
+document.getElementById("unionToday").insertAdjacentHTML('beforeend', (dateHTML + eventHTML));
 
 function getEvent(day) {
     var eventHTML;
